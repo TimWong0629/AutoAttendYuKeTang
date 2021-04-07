@@ -88,6 +88,8 @@ const startUp = async () => {
   const { USER_INFO } = process.env
   console.log(USER_INFO)
   const [USERNAME, PASSWORD] = USER_INFO.split('|')
+  console.log(USERNAME)
+  console.log(PASSWORD)
   if (USERNAME && PASSWORD) {
     console.log("Failed: USER_INFO not provided.")
     process.exit(0)
