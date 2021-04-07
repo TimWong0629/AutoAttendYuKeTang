@@ -90,10 +90,10 @@ const startUp = async () => {
   const [USERNAME, PASSWORD] = USER_INFO.split('|')
   console.log(USERNAME)
   console.log(PASSWORD)
-  if (USERNAME && PASSWORD) {
-    console.log("Failed: USER_INFO not provided.")
-    process.exit(0)
-  }
+//   if (USERNAME && PASSWORD) {
+//     console.log("Failed: USER_INFO not provided.")
+//     process.exit(0)
+//   }
   await login(USERNAME, PASSWORD)
   execCheckIn()
 }
