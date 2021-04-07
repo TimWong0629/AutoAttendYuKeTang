@@ -72,7 +72,9 @@ const execCheckIn = async () => {
   const lessonInfo = await getOnLessonInfo()
 
   if (!lessonInfo && count < times) {
+    
     setTimeout(execCheckIn, 60000)
+    sendNotify('Scaning', `Not Found Online Class ${count}`)
     return
   } else if (count === times) {
     sendNotify('YuKeTang: fail', 'Not Found Online Class')
