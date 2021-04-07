@@ -59,9 +59,9 @@ const attendLesson = async ({
   const { success } = await customGot(api.attendLesson, {
     searchParams: { lesson_id },
   }).json()
-
   if (success) {
     sendNotify('YuKeTang: success', name)
+    execCheckIn()
   } else {
     sendNotify('YuKeTang: fail', name)
   }
@@ -72,7 +72,6 @@ const execCheckIn = async () => {
   const lessonInfo = await getOnLessonInfo()
 
   if (!lessonInfo && count < times) {
-    
     setTimeout(execCheckIn, 60000)
     sendNotify('Scaning', "Scanning "+String(count)+"th Round")
     return
@@ -88,8 +87,9 @@ const startUp = async () => {
   const { USER_INFO } = process.env
   console.log(USER_INFO)
   const [USERNAME, PASSWORD] = USER_INFO.split('|')
-
+  
   await login(USERNAME, PASSWORD)
+  sendNotify('Script is Running', '')
   execCheckIn()
 }
 
