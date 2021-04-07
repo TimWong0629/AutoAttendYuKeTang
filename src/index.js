@@ -86,6 +86,7 @@ const execCheckIn = async () => {
 
 const startUp = async () => {
   const { USER_INFO } = process.env
+  console.log(USER_INFO)
   const [USERNAME, PASSWORD] = USER_INFO.split('|')
   if (USERNAME && PASSWORD) {
     console.log("Failed: USER_INFO not provided.")
@@ -96,3 +97,4 @@ const startUp = async () => {
 }
 
 startUp()
+
