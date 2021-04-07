@@ -10,7 +10,7 @@ const resolve = function (...args) {
 }
 
 let count = 0
-const times = 20
+const times = 1440
 
 const cookieJar = new CookieJar()
 
