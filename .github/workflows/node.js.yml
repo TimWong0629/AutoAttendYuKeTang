@@ -38,3 +38,9 @@ jobs:
         env:
           USER_INFO: ${{ secrets.USER_INFO }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
+
+      - name: Run script2
+        run: node src/index.js
+        env:
+          USER_INFO: ${{ secrets.USER_INFO }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
