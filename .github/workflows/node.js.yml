@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: ArchFireCoo/AutoAttendYuKeTang
+          repository: TimWong0629/AutoAttendYuKeTang
           ref: master
 
       - name: Use Node.js ${{ matrix.node-version }}
