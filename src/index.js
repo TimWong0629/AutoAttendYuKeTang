@@ -10,7 +10,7 @@ const resolve = function (...args) {
 }
 
 let count = 0
-const times = 1440
+const times = 23333
 
 const cookieJar = new CookieJar()
 
@@ -72,7 +72,7 @@ const execCheckIn = async () => {
   const lessonInfo = await getOnLessonInfo()
 
   if (!lessonInfo && count < times) {
-    setTimeout(execCheckIn, 60000)
+    setTimeout(execCheckIn, 20000)
     return
   } else if (count === times) {
     sendNotify('YuKeTang: fail', 'Not Found Online Class')
