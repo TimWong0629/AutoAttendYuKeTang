@@ -4,7 +4,7 @@ const fs = require('fs')
 const got = require('got')
 const { CookieJar } = require('tough-cookie')
 const sendNotify = require('./sendNotify')
-
+let lessonSet = new Set()
 const resolve = function (...args) {
   return path.resolve(__dirname, ...args)
 }
@@ -60,7 +60,11 @@ const attendLesson = async ({
     searchParams: { lesson_id },
   }).json()
   if (success) {
-    sendNotify('YuKeTang: success', name)
+    if(lessonSet.has(lesson_id))
+    {
+      sendNotify('YuKeTang: success', name)
+    }
+    lessonSet.add(lesson_id)
     execCheckIn()
   } else {
     sendNotify('YuKeTang: fail', name)
