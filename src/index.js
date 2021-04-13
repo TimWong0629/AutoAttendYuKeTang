@@ -60,7 +60,7 @@ const attendLesson = async ({
     searchParams: { lesson_id },
   }).json()
   if (success) {
-    if(lessonSet.has(lesson_id))
+    if(!(lessonSet.has(lesson_id)))
     {
       sendNotify('YuKeTang: success', name)
     }
@@ -76,7 +76,7 @@ const execCheckIn = async () => {
   const lessonInfo = await getOnLessonInfo()
 
   if (!lessonInfo && count < times) {
-    setTimeout(execCheckIn, 20000)
+    setTimeout(execCheckIn, 30000)
     return
   } else if (count === times) {
     sendNotify('YuKeTang: fail', 'Not Found Online Class')
