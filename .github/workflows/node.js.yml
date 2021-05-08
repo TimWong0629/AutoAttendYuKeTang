@@ -1,9 +1,9 @@
-name: Attend_Mon2Fri_allday
+name: Attend_Everyday_WholeDay
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 1-5'
+    - cron: '0 0 * * *'
   repository_dispatch:
     types: joy
 
