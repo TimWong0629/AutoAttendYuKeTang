@@ -4,7 +4,7 @@ const SCKEY = process.env.PUSH_KEY
 
 const sendNotify = (title, message) => {
   if (SCKEY) {
-    got(`https://sc.ftqq.com/${SCKEY}.sendNotify`, {
+    got(`https://sctapi.ftqq.com/${SCKEY}.send`, {
       searchParams: {
         text: title,
         desp: message,
